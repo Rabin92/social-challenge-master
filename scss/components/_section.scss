@@ -1,0 +1,49 @@
+/* **************************** SECTION STYLES **************************** */
+
+.sec,
+.btn {
+  @include gutter;
+  @include flexy($justify-c: space-between);
+  @media #{$break-s} {
+    @include flexy($dsp: null, $fdir: column);
+  }
+}
+
+.btn {
+  @media #{$break-m} {
+    margin-left: 40px;
+    @include flexy($dsp: null, $justify-c: flex-start);
+  }
+}
+
+.sec {
+  @media #{$break-s} {
+    margin-top: 25px;
+  }
+  @media #{$break-m} {
+    @include flexy($dsp: null, $justify-c: space-between);
+  }
+  margin-top: 30px;
+  &-one,
+  &-two {
+    padding: 0.4em;
+    border-radius: 5px;
+    background: rgb(212, 211, 211);
+    @media #{$break-s} {
+      margin-bottom: 20px;
+    }
+    @media #{$break-m} {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.icon-solid {
+  float: right;
+  height: 18px;
+  margin: 2px 0 0 5px;
+}
+
+.intro {
+  margin: 20px 0 20px 0;
+}

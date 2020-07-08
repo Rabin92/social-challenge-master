@@ -1,0 +1,38 @@
+/* ******************************* BASE STYLES ****************************** */
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  background: $primary-bck;
+}
+
+.box-container {
+  padding: 1em;
+  background: #fff;
+}
+
+.wrapper {
+  @media #{$break-m} {
+    @include wrapper($width: 100%, $margin: 0 auto);
+  }
+  @media #{$break-l} {
+    @include wrapper($m-width: 1090px);
+  }
+}
+
+.box-container {
+  @media #{$break-m} {
+    padding: 1.5em;
+    border-radius: 5px;
+    border-left: 3px solid $container-brd;
+    border-right: 3px solid $container-brd;
+  }
+}

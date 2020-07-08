@@ -1,0 +1,17 @@
+/* ****************************** BUTTON STYLES ***************************** */
+
+button[type="button"] {
+  @media #{$break-s} {
+    margin-bottom: 20px;
+  }
+  @media #{$break-m} {
+    margin-right: 10px;
+  }
+  padding: 8px 30px;
+  border-radius: 4px;
+  background: rgb(212, 211, 211);
+  &:first-child {
+    color: $white;
+    background-color: rgb(64, 64, 95);
+  }
+}

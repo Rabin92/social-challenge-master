@@ -1,0 +1,72 @@
+/* ****************************** HEADER STYLES ***************************** */
+
+header {
+  height: 200px;
+  border-bottom: 3px solid $white;
+  background: url(../images/code.jpeg);
+  background-size: cover;
+}
+
+.main-profile {
+  @include flexy($dsp: null, $a-self: $t-align);
+  @media #{$break-s} {
+    top: 135px;
+    height: 100px;
+  }
+  @media #{$break-m} {
+    @include flexy($dsp: null, $a-self: initial);
+  }
+  position: absolute;
+  top: 120px;
+  height: 150px;
+  border: 6px solid $profile-border;
+  border-radius: 50%;
+  background: silver;
+  box-shadow: 0 8px 6px -3px black;
+}
+
+.profile-name {
+  @include flexy($dsp: null, $a-self: flex-start);
+  @media #{$break-m} {
+    @include flexy($dsp: null, $a-self: flex-end);
+  }
+  font-weight: 900;
+  margin: 140px 0 0 10px;
+  padding: 0 0.2em;
+  color: $white;
+  p {
+    margin-left: 10px;
+  }
+}
+
+.flex-container {
+  @include flexy($fdir: column);
+}
+
+.icon {
+  @include flexy($justify-c: space-between);
+  @media #{$break-s} {
+    @include flexy($dsp: null, $justify-c: space-evenly);
+    margin-top: 40px;
+  }
+  @media #{$break-m} {
+    @include flexy($dsp: null, $justify-c: flex-end);
+  }
+}
+
+svg {
+  &.icon-social {
+    height: 28px;
+    margin-top: 10px;
+    padding: 0 0.4em;
+    transition: transform 0.2s ease-out 0.2s;
+    border-radius: 10px;
+    fill: darkslategray;
+    &:hover {
+      cursor: pointer;
+      transform: rotate(10deg);
+      background: green;
+      fill: $white;
+    }
+  }
+}

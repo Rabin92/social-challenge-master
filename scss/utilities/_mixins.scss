@@ -1,0 +1,25 @@
+@mixin flexy(
+  $dsp: flex,
+  $fdir: null,
+  $align: null,
+  $a-self: null,
+  $justify-c: null,
+  $f-wrap: null
+) {
+  display: $dsp;
+  flex-direction: $fdir;
+  align-items: $align;
+  align-self: $a-self;
+  justify-content: $justify-c;
+  flex-wrap: $f-wrap;
+}
+
+@mixin gutter {
+  padding: 1em;
+}
+
+@mixin wrapper($width: null, $margin: null, $m-width: null) {
+  width: $width;
+  margin: $margin;
+  max-width: $m-width;
+}

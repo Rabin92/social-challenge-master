@@ -1,0 +1,54 @@
+/* ***************************** ARTICLE STYLES ***************************** */
+.main-article {
+  @include flexy();
+  margin-top: 25px;
+  .main-profile-pic {
+    height: 40px;
+    margin-right: 10px;
+    border: 2px solid $profile-border;
+    border-radius: 50%;
+    background: lightgrey;
+  }
+}
+
+.main-article-box {
+  @media #{$break-m} {
+    flex-basis: 100%;
+  }
+  padding: 0.6em 0.6em;
+  border-radius: 5px;
+  background: rgb(212, 211, 211);
+  box-shadow: 0 8px 6px -6px black;
+  h3 {
+    display: $dsp-inline;
+  }
+  .icon-solid {
+    float: left;
+    margin-right: 5px;
+  }
+  span.date {
+    font-size: 0.8em;
+    float: right;
+  }
+}
+
+[class="icon-svg"] {
+  display: $dsp-inline;
+  span {
+    font-size: 0.8rem;
+  }
+}
+
+.img-badge {
+  width: 800px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.sign-up {
+  margin-top: 10px;
+  text-align: $t-align;
+  &-btn {
+    margin-top: 20px;
+  }
+}
