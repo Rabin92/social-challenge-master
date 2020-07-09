@@ -11,7 +11,7 @@
 
 .btn {
   @media #{$break-m} {
-    margin-left: 40px;
+    margin-left: 52px;
     @include flexy($dsp: null, $justify-c: flex-start);
   }
 }
@@ -42,6 +42,12 @@
   float: right;
   height: 18px;
   margin: 2px 0 0 5px;
+  fill: $btn-color;
+  &:hover {
+    fill: darken($btn-color, 10%);
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 }
 
 .intro {

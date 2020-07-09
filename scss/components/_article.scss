@@ -1,6 +1,14 @@
 /* ***************************** ARTICLE STYLES ***************************** */
-.main-article {
-  @include flexy();
+.flex-wrap {
+  @include flexy($fdir: column);
+  @media #{$break-m} {
+    @include flexy($fdir: row);
+  }
+}
+
+.flex {
+  flex-basis: 100%;
+  @include flexy($f-wrap: wrap);
   margin-top: 25px;
   .main-profile-pic {
     height: 40px;
@@ -11,14 +19,12 @@
   }
 }
 
-.main-article-box {
+.flex-item {
   @media #{$break-m} {
     flex-basis: 100%;
   }
+  @include flexy();
   padding: 0.6em 0.6em;
-  border-radius: 5px;
-  background: rgb(212, 211, 211);
-  box-shadow: 0 8px 6px -6px black;
   h3 {
     display: $dsp-inline;
   }
@@ -30,6 +36,16 @@
     font-size: 0.8em;
     float: right;
   }
+}
+
+.flex-item-col {
+  @media #{$break-m} {
+    width: 100%;
+  }
+  background: rgb(212, 211, 211);
+  padding: 0.5em;
+  border-radius: 5px;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 [class="icon-svg"] {
@@ -46,9 +62,21 @@
 }
 
 .sign-up {
-  margin-top: 10px;
+  @include flexy($fdir: column);
+  @media #{$break-m} {
+    padding: 1.5em;
+    display: initial;
+    align-self: center;
+  }
+  display: none;
+  flex-basis: 50%;
   text-align: $t-align;
   &-btn {
     margin-top: 20px;
+  }
+  section {
+    @include gutter();
+    box-shadow: inset 0 0 10px #000000;
+    border-radius: 5px;
   }
 }

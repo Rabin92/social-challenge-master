@@ -419,7 +419,7 @@ body {
 /* ****************************** HEADER STYLES ***************************** */
 header {
   height: 200px;
-  border-bottom: 3px solid #fff;
+  border-bottom: 5px solid #fff;
   background: url(../images/code.jpg);
   background-size: cover;
 }
@@ -514,7 +514,7 @@ svg.icon-social:hover {
 
 @media (min-width: 39.6875em) {
   .btn {
-    margin-left: 40px;
+    margin-left: 52px;
     justify-content: flex-start;
   }
 }
@@ -552,6 +552,12 @@ svg.icon-social:hover {
   float: right;
   height: 18px;
   margin: 2px 0 0 5px;
+  fill: #40405f;
+}
+.icon-solid:hover {
+  fill: #2b2b41;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .intro {
@@ -560,6 +566,7 @@ svg.icon-social:hover {
 
 /* ****************************** BUTTON STYLES ***************************** */
 button[type=button] {
+  margin-bottom: 10px;
   padding: 8px 30px;
   border-radius: 4px;
   background: #d4d3d3;
@@ -578,13 +585,29 @@ button[type=button]:first-child {
   color: #fff;
   background-color: #40405f;
 }
+button[type=button]:first-child:hover {
+  background: #2b2b41;
+}
 
 /* ***************************** ARTICLE STYLES ***************************** */
-.main-article {
+.flex-wrap {
   display: flex;
+  flex-direction: column;
+}
+@media (min-width: 39.6875em) {
+  .flex-wrap {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.flex {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 25px;
 }
-.main-article .main-profile-pic {
+.flex .main-profile-pic {
   height: 40px;
   margin-right: 10px;
   border: 2px solid gold;
@@ -592,27 +615,37 @@ button[type=button]:first-child {
   background: lightgrey;
 }
 
-.main-article-box {
+.flex-item {
+  display: flex;
   padding: 0.6em 0.6em;
-  border-radius: 5px;
-  background: #d4d3d3;
-  box-shadow: 0 8px 6px -6px black;
 }
 @media (min-width: 39.6875em) {
-  .main-article-box {
+  .flex-item {
     flex-basis: 100%;
   }
 }
-.main-article-box h3 {
+.flex-item h3 {
   display: inline-block;
 }
-.main-article-box .icon-solid {
+.flex-item .icon-solid {
   float: left;
   margin-right: 5px;
 }
-.main-article-box span.date {
+.flex-item span.date {
   font-size: 0.8em;
   float: right;
+}
+
+.flex-item-col {
+  background: #d4d3d3;
+  padding: 0.5em;
+  border-radius: 5px;
+  box-shadow: 0 8px 6px -6px black;
+}
+@media (min-width: 39.6875em) {
+  .flex-item-col {
+    width: 100%;
+  }
 }
 
 [class=icon-svg] {
@@ -629,11 +662,26 @@ button[type=button]:first-child {
 }
 
 .sign-up {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  flex-basis: 50%;
   text-align: center;
+}
+@media (min-width: 39.6875em) {
+  .sign-up {
+    padding: 1.5em;
+    display: initial;
+    align-self: center;
+  }
 }
 .sign-up-btn {
   margin-top: 20px;
+}
+.sign-up section {
+  padding: 1em;
+  box-shadow: inset 0 0 10px #000000;
+  border-radius: 5px;
 }
 
 /* ********************************* FOOTER ********************************* */
@@ -646,7 +694,7 @@ button[type=button]:first-child {
 @media (min-width: 39.6875em) {
   .main-footer {
     height: 100px;
-    border-top: 3px solid #fff;
+    border-top: 5px solid #fff;
     border-radius: initial;
   }
 }

@@ -7,11 +7,16 @@ button[type="button"] {
   @media #{$break-m} {
     margin-right: 10px;
   }
+
+  margin-bottom: 10px;
   padding: 8px 30px;
   border-radius: 4px;
   background: rgb(212, 211, 211);
   &:first-child {
     color: $white;
-    background-color: rgb(64, 64, 95);
+    background-color: $btn-color;
+    &:hover {
+      background: darken($btn-color, 10%);
+    }
   }
 }
